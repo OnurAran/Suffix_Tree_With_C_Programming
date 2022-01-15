@@ -1,0 +1,349 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+Kocaeli Üniversitesi
+
+Bilgisayar Mühendisliği Bölümü
+
+PROGRAMLAMA LAB. I- II. Proje
+
+ONUR ARAN 200202096
+
+UĞUR SEVGİN 200202109
+
+ÖZET
+
+Programlama Laboratuvarı 1 dersinin 2. Projesinde bizden sonek ağaçları
+ve sonek dizilerini kullanarak katarlar üzerinde bazı arama işleri
+yapılması istenmiştir.
+
+Biyoinformatikte adı sıkça geçen algoritmalardan olan suffix tree yapısı
+bir dizgi model eşleştirme yapısıdır. Elimizdeki katarın alt dizgilerini
+aramak ve kaç adet olduğunu hesaplamak gibi işlemleri yapmakta gayet
+hızlı olmamızı sağlıyor.
+
+1- GİRİŞ
+
+Proje için C programlama dili ve CodeBlocks geliştirme ortamı
+kullanıldı.
+
+AT\&T Bell laboratuvarlarında, KenThompson ve DennisRitchie tarafından
+UNIX İşletim Sistemi' ni geliştirebilmek amacıyla B dilinden türetilmiş
+yapısal bir programlama dilidir. Code:Blocks özellikle C ve C++ gibi
+programlama dillerinde kodlamageliştirmeyapmamızaimkanveren, açık
+kaynakkodlu ve cross-platform bir IDE'dir.
+
+2-YÖNTEM
+
+Projemiz main(),katarbul(),printTree(), olmak üzere 3 adet fonksiyondan
+oluşmaktadır.
+
+MAİN():
+
+Main fonksiyonu ana fonksiyon olup yan fonksiyonları çalıştıran
+
+ana fonksiyondur.
+
+int main()
+
+\{
+
+FILE *ptr;
+
+ptr=fopen("katar.txt","w");
+
+char iste{[}16{]};
+
+printf("Katari giriniz: ");
+
+scanf("\%s",\&iste);
+
+\}
+
+Burada ptr isimli değişkeni katar.txt isimli dosyayı "w" modu ile fopen
+fonksiyonu ile açtık. "w" modu ile açmamızın sebebi her kod çalıştığında
+tekrar dosya yok ise oluşturması eğer varsa da içini temizleyip yeni
+katarı temiz dosyaya yazdırmak istememizden dolayıdır.
+
+for(i=0; i\textless{}strlen(getWord); i++)
+
+\{
+
+strcpy(son\_ek{[}i{]},str+i);
+
+\}
+
+int countt=strlen(getWord);
+
+for(i=0; i\textless{}strlen(getWord); i++)
+
+\{
+
+printf("\%s",son\_ek{[}i{]});
+
+printf("\textbackslash{}n");
+
+\}
+
+printf("\textbackslash{}n\textbackslash{}n");
+
+for(i=0; i\textless{}strlen(getWord); i++)
+
+\{
+
+for(k=0; k\textless{}=i; k++)
+
+\{
+
+on\_ek{[}i{]}{[}k{]}=getWord{[}k{]};
+
+\}
+
+on\_ek{[}i{]}{[}k{]}='\textbackslash{}0';
+
+\}
+
+printf("\textbackslash{}n");
+
+int sayac3=0;
+
+for(i=0; i\textless{}strlen(getWord2)+strlen(getWord); i++)
+
+\{
+
+strcpy(on\_ek{[}i{]},getWord2);
+
+getWord2{[}strlen(getWord2)-1{]}='\textbackslash{}0';
+
+sayac3++;
+
+\}
+
+for(i=0; i\textless{}countt; i++)
+
+\{
+
+//ONEK BASTIR
+
+printf("\textbackslash{}n\%s",on\_ek{[}i{]});
+
+\}
+
+printf("\textbackslash{}n\textbackslash{}n\textbackslash{}n");
+
+int temp=1;
+
+for(i=1; i\textless{}countt; i++)
+
+\{
+
+if(strcmp(son\_ek{[}i{]},on\_ek{[}i{]})==0)
+
+\{
+
+temp=0;
+
+break;
+
+\}
+
+\}
+
+Buradaki iç içe for döngülerini,kontrolleri önek ve sonekleri bulup
+,karşılaştırmak için yazdık. Bir katarı main fonksiyonun başında
+kullanıcıdan aldık. Kullanıcıdan alınan katarı önek ve soneklerine
+ayırdık. Önek : öntakı ya da prefiks: Kök sözcüğün başına gelen eklere
+denir. Sonek: Son ek ya da suffiks, dil bilgisinde bir kelimenin kökü ve
+gövdesinin sonuna gelen ektir. Bir katarın önek ve soneklerini kontrol
+etmemizin sebebi sonek ağacı oluşturmanın ilk koşulu bunu kontrol
+etmekten geçiyor. Eğer bir katarın öneklerinden herhangi birisi
+soneklerinden herhangi birisine eşitse veya bir katarın soneklerinden
+herhangi birisi öneklerinden herhangi birisine eşitse o katar için Sonek
+Ağacı oluşturulamaz. Bizde burda bu yüzden burda önekleri ve sonekleri
+bulduk ayrı kullanıcının manuel olarak kullanabilmesi için de ekrana
+yazdırdık.
+
+İnt katarbul();
+
+Bu fonksiyon 4 parametre almaktadır. Kullanıcıdan alınan katar,
+Kullanıcının bulmak istediği katar, Kullanıcıdan alınan katarın
+uzunluğu,Kullanıcının bulmak istediği katarın uzunluğu.
+
+int i=0,j=0,k=0,n=-1;
+
+while(i\textless{}(size1-size2))
+
+\{
+
+j=0;
+
+k=i;
+
+n=1;
+
+while(j\textless{}size2)
+
+\{
+
+//ALINAN KATARI VE ISTENEN KATARI KARŞILAŞTIRMA
+
+if(getWord{[}k{]}!=findKatar{[}j{]})
+
+\{
+
+n=0;
+
+break;
+
+\}
+
+j++;
+
+k++;
+
+\}
+
+if(n==1)
+
+return i;
+
+i++;
+
+\}
+
+return -1;
+
+Burada kullanıcının girdiği katarı ve aranan katarı karşılaştırıyor eğer
+birbirine eşitse return True döndürüyor eğer yanlışsa da False değer
+döndürüyor.
+
+int printTree();
+
+setcolor(GREEN);
+
+// DAİRE ÇİZDİRME
+
+circle(x, y, 20);
+
+floodfill(x, y, GREEN);
+
+// ÇİZGİLERİN RENGİNİ BELİRLEME
+
+setcolor(GREEN);
+
+// SOL VE SAG DÜGÜMLERİ AYIRMA
+
+int left = 2 * index + 1;
+
+int right = 2 * index + 2;
+
+printTree(x - y / (index + 1), y + 50,
+
+array, left, total\_elements);
+
+printTree(x + y / (index + 1), y + 50,
+
+array, right, total\_elements);
+
+// ÇİZGİLERİ ÇİZDİRME
+
+if (left \textless{} total\_elements)
+
+\{
+
+line(x, y, x - y / (index + 1), y + 50);
+
+\}
+
+if (right \textless{} total\_elements)
+
+\{
+
+line(x, y, x + y / (index + 1), y + 50);
+
+\}
+
+Bu fonksiyonda girilen 5 parametre çerçevesinde Sonek Ağacı oluşturuyor.
+Alınan parametreler x koordinatı, y koordinatı, çıktıların olduğu array
+dizisi, index sayıları, toplam eleman sayisi.
+
+DENEYSEL SONUÇLAR
+
+SONUÇ
+
+Bu projeden ağaç yapılarını graphics.h kütüphanesini sonek önek
+terimlerini ve bunların kodlarla uyumunu ve çalıştırılmasını öğrendim.
+Araştırma yapmayı ve öğrenmeyi öğrendim. Araştırma yaparken C ile veri
+yapıları Bağlı Listeleri Struct yapılarını araştırdım ve bunların
+üzerinde kodumda kullanmadığım bilgileri de öğrendim.
+
+AKIŞ ŞEMASI
+
+KAYNAKÇA
+
+\url{https://www.geeksforgeeks.org/suffix-tree-application-3-longest-repeated-substring/?ref=lbp}
+
+\url{https://www.geeksforgeeks.org/suffix-tree-application-5-longest-common-substring-2/?ref=lbp}
+
+\url{https://stackoverflow.com/questions/3306279/tries-and-suffix-trees-implementation}
+
+\url{https://github.com/schmidda/ukkonen-suffixtree}
+
+KAYNAKÇA
+
+\url{https://www.koseburak.net/blog/suffix-tree/}
+
+\url{https://web.stanford.edu/~mjkay/suffix_tree.pdf}
+
+\url{https://en.wikipedia.org/wiki/Suffix_tree}
+
+\end{document}

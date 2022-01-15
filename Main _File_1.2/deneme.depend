@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1637599851 source:c:\users\onur aran\desktop\deneme\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<graphics.h>
+	<iostream>
+	<math.h>
+	<sstream>
+
